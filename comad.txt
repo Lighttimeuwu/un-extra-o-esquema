@@ -1,0 +1,3 @@
+para pacientes (rol 4) se va a agenda.html
+para odontologo (rol 2) se va a odontologo.html
+para recepcionista: rol 3 = se va a odontologo.html
