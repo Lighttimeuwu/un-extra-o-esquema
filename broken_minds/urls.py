@@ -16,23 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.http import HttpResponse
-
-# Esta es tu primera "Vista". Recibe la petición del navegador y responde con HTML.
-def home(request):
-    return HttpResponse("""
-        <style>
-            body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f0f2f5; margin: 0; }
-            .card { text-align: center; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-            h1 { color: #092e20; } /* El color verde clásico de Django */
-        </style>
-        <div class="card">
-            <h1>Broken Minds</h1>
-            <p>UN BALURDO INTENTO DE APOYO PSICOLOGICO</p>
-        </div>
-    """)
+# Importamos la vista directamente desde la carpeta 'tareas'
+from tareas.views import lista_tareas
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home),  # La ruta vacía '' significa la página de inicio (http://127.0.0.1:8000/)
+    path('', lista_tareas), # Ahora la página de inicio carga tus tareas reales
 ]
